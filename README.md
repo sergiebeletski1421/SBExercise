@@ -7,7 +7,7 @@ catalog of products and their parts.
 
 - Kotlin 2.2 on JDK 17
 - Spring Boot 4.0 (Web MVC, JDBC, Validation, Retry)
-- PostgreSQL 16 with the `pg_trgm` extension
+- PostgreSQL 16
 - Maven (wrapper included), JUnit 5, Mockito-Kotlin
 
 ## Quick start
