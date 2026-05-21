@@ -26,26 +26,8 @@ CREATE TABLE parts (
            REFERENCES products(id)
 );
 
-CREATE EXTENSION IF NOT EXISTS pg_trgm;
-
 CREATE INDEX idx_parts_product_id
     ON parts(product_id);
 
 CREATE INDEX idx_products_category_name
     ON products (LOWER(category_name));
-
-CREATE INDEX idx_products_product_name_trgm
-    ON products
-    USING GIN (LOWER(product_name) gin_trgm_ops);
-
-CREATE INDEX idx_parts_external_part_number_trgm
-    ON parts
-    USING GIN (LOWER(external_part_number) gin_trgm_ops);
-
-CREATE INDEX idx_parts_part_description_trgm
-    ON parts
-    USING GIN (LOWER(part_description) gin_trgm_ops);
-
-CREATE INDEX idx_parts_brand_name_trgm
-    ON parts
-    USING GIN (LOWER(brand_name) gin_trgm_ops);
